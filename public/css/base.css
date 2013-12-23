@@ -1,0 +1,20 @@
+/*导航*/
+.bs-docs-nav{
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+	background-color: #563D7C;
+	border-color: #463265;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.bs-docs-nav .navbar-nav > li  a{
+	color: #CDBFE3;
+}
+.bs-docs-nav .navbar-brand {
+	color: #FFF;
+}
+.bs-docs-nav .navbar-nav > li a:hover{
+	color:#fff;
+}
+.bs-docs-nav .navbar-nav > .active > a, .bs-docs-nav .navbar-nav > .active > a:hover{
+	color: #FFF;
+	background-color: #463265;
+}
