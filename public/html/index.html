@@ -7,8 +7,9 @@
         <meta name="author" content="">
 
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+        <!-- <link href="../css/bootstrap-responsive.css" rel="stylesheet"> -->
         <link href="../css/base.css" rel="stylesheet">
+        <link href="../css/index.css" rel="stylesheet">
     </head>
 
     <body style="">
@@ -44,7 +45,7 @@
                               </ul>
                               <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <form class="navbar-form navbar-left" role="search">
+                                    <div class="navbar-form navbar-left" role="search">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="按回车键搜索">
                                         </div>
@@ -65,13 +66,116 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2">
-                    
+                    <div class="bs-sidebar hidden-print affix" role="complementary">
+                        <ul class="nav bs-sidenav">
+                            <li>
+                              <a href="#list-group">年级</a>
+                              <ul class="nav">
+                                <li><a href="#list-group-basic">初一</a></li>
+                                <li><a href="#list-group-badges">初二</a></li>
+                                <li><a href="#list-group-linked">初三</a></li>
+                                <li><a href="#list-group-custom-content">高一</a></li>
+                                <li><a href="#list-group-custom-content">高二</a></li>
+                                <li><a href="#list-group-basic">高三</a></li>
+                              </ul>
+                            </li>
+                            <li class="active">
+                              <a href="#list-group">年级</a>
+                              <ul class="nav">
+                                <li class="active"><a href="#list-group-basic">初一</a></li>
+                                <li><a href="#list-group-badges">初二</a></li>
+                                <li><a href="#list-group-linked">初三</a></li>
+                                <li><a href="#list-group-custom-content">高一</a></li>
+                                <li><a href="#list-group-custom-content">高二</a></li>
+                                <li><a href="#list-group-basic">高三</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#list-group">年级</a>
+                              <ul class="nav">
+                                <li><a href="#list-group-basic">初一</a></li>
+                                <li><a href="#list-group-badges">初二</a></li>
+                                <li><a href="#list-group-linked">初三</a></li>
+                                <li><a href="#list-group-custom-content">高一</a></li>
+                                <li><a href="#list-group-custom-content">高二</a></li>
+                                <li><a href="#list-group-basic">高三</a></li>
+                              </ul>
+                            </li>
+                        </ul>
+                      </div>
                 </div>
-                <div class="col-md-8">
-                    
+                <div class="col-md-7">
+                    <div style="height:2000px"></div>
                 </div>
-                <div class="col-md-2">
-                    
+                <div class="col-md-3">
+                    <div class="recommend-nav">
+                        <ul id="myTab" class="nav nav-tabs">
+                            <li class=""><a href="#new" data-toggle="tab">最新上传</a></li>
+                            <li class="active"><a href="#rank" data-toggle="tab">排行榜</a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade" id="new">
+                                <div class="thumbnail box">
+                                    <ul class="list-unstyled">
+                                        <li class="list">
+                                            <a href="#">
+                                                <span class="tit">二氧化碳遇到生石灰</span>
+                                                <span class="date">12-32</span>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#">
+                                                <span class="tit">二氧化碳遇到生石灰</span>
+                                                <span class="date">12-32</span>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#">
+                                                <span class="tit">二氧化碳遇到生石灰</span>
+                                                <span class="date">12-32</span>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#">
+                                                <span class="tit">二氧化碳遇到生石灰</span>
+                                                <span class="date">12-32</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="rank">
+                                <div class="thumbnail box">
+                                    <ul class="list-unstyled">
+                                        <li class="list">
+                                            <a href="#">
+                                                <span class="badge ranking">1</span>
+                                                <span class="tit">二氧化碳遇到羊羊羊</span>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#">
+                                                 <span class="badge ranking">2</span>
+                                                <span class="tit">二氧化碳遇到羊羊羊</span>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#">
+                                                 <span class="badge ranking">3</span>
+                                                <span class="tit">二氧化碳遇到羊羊羊</span>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#">
+                                                 <span class="badge ranking">10</span>
+                                                <span class="tit">二氧化碳遇到羊羊羊</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

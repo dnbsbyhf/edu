@@ -1,0 +1,45 @@
+.recommend-nav{
+	margin-top: 20px;
+	background-color:;
+}
+.recommend-nav .box{
+	border-top: none;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	text-decoration: center;
+}
+
+.recommend-nav .box ul{
+	margin-top:10px;
+}
+
+.recommend-nav .box ul li{
+	overflow: hidden;
+	padding:5px 0px;
+}
+
+.recommend-nav .box ul li:hover{
+	background-color: #F5F5F5;
+}
+
+.recommend-nav .box ul li a {
+
+}
+
+.recommend-nav .box ul li .tit{
+	float:left;
+	width:72%;
+	margin:0px 5px;
+}
+
+.recommend-nav .box ul li .date{
+	float:right;
+	width:20%;
+}
+
+.recommend-nav .box ul li .ranking{
+	float:left;
+	width:13%;
+	margin:2px 5px;
+	background-color:#463265;
+}
