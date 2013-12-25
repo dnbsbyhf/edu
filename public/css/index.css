@@ -53,6 +53,9 @@
 	color:#555;
 }
 
+.list-unstyled li a{
+	color:#563D7C;
+}
 
 /*主题框*/
 .main-container{
