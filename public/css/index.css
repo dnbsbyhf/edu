@@ -43,3 +43,105 @@
 	margin:2px 5px;
 	background-color:#463265;
 }
+
+/*右边导航*/
+.nav-tabs>li>a{
+	color:#fff;
+}
+
+.nav-tabs>li>a:hover{
+	color:#555;
+}
+
+
+/*主题框*/
+.main-container{
+	background-color:#fff;
+	border-radius: 5px;
+	margin-top: 30px;
+	padding:10px;
+}
+
+.card-list-box{
+	background:url(img/graph-bg.png) repeat;
+}
+
+.list-box .card{
+	font-family: "Times New Roman", Times, Cambria, serif;
+	padding:10px;
+	margin:0 auto;
+}
+
+.card li{
+	line-height: 18px;
+	float: left;
+	width: 207px;
+	padding: 10px;
+	border: 1px solid #DDD;
+	color: #333;
+	-webkit-box-shadow: 1px 1px 7px rgba(153, 153, 153, 0.2);
+	-moz-box-shadow: 1px 1px 7px rgba(153, 153, 153, 0.2);
+	box-shadow: 1px 1px 7px rgba(153, 153, 153, 0.2);
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background: url(img/card.png);
+	margin:20px 10px;
+	height: 260px;
+}
+
+.card li:hover{
+	background-color: #FFF;
+	opacity: 1.0;
+	background-position: center -30px;
+}
+
+.card li .link{
+	text-align: center;
+	text-decoration: none;
+}
+.card li .link .title{
+	color: #999;
+}
+
+.card li .link:hover .title{
+	color: #BA1820;
+}
+
+.card li .link .icon{
+	margin: 10px 0px;
+}
+
+.card li .link .icon img{
+	width:170px;
+	height:90px;
+}
+
+.card li .link .icon .cnt{
+	position:relative;
+}
+
+.card li .link .icon .cnt strong{
+	position:absolute;
+	left:0px;
+	top:36px;
+	background-color: #000;
+	opacity: 0.8;
+	height:20px;
+	width:100%;
+	font-weight: normal;
+	color:#fff;
+}
+
+.card li .content{
+	font-size: 12px;
+	line-height: 12px;
+	text-indent: 2em;
+	margin-bottom:10px;
+}
+
+.card li .public-time{
+	color:#BA1820;
+	font-size: 12px;
+	line-height: 12px;
+}
