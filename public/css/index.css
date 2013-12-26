@@ -1,3 +1,9 @@
+a{
+	color:#563D7C;
+}
+a:hover{
+	color:#563D7C;	
+}
 .recommend-nav{
 	margin-top: 20px;
 	background-color:;
@@ -63,6 +69,9 @@
 	border-radius: 5px;
 	margin-top: 30px;
 	padding:10px;
+	margin-bottom:30px;
+	border:1px solid #DDD;
+	box-shadow: 1px 1px 7px rgba(153, 153, 153, 0.2);
 }
 
 .card-list-box{
@@ -89,7 +98,7 @@
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	background: url(img/card.png);
-	margin:20px 10px;
+	margin:20px 0px;
 	height: 260px;
 }
 
@@ -148,3 +157,127 @@
 	font-size: 12px;
 	line-height: 12px;
 }
+
+@media (min-width: 400px) {
+	.card li{
+		margin:20px 40px;
+	}
+}
+
+@media (min-width: 992px) {
+	.card li{
+		margin:20px 10px;
+	}
+}
+
+@media (max-width: 400px) {
+	.card{
+		padding-left:30px;
+	}
+}
+
+
+/*footer*/
+.footer{
+	background-color:#fff;
+	height:40px;
+	text-align: center;
+}
+
+.footer p{
+	display: inline-block;
+	margin:10px;
+}
+.footer p a{
+	color:#563D7C;
+}
+
+
+
+
+
+/*详情页*/
+.detail-box{
+
+}
+.detail-box .title{
+	padding-bottom:28px;
+	text-align: center;
+	font-size: 28px;
+	font-weight: normal;
+	line-height: 40px;
+	background: url(img/underline.png) repeat-x bottom center;
+}
+
+.detail-box .type{
+	margin-top:20px;
+}
+
+.detail-box .type a{
+	padding:0 10px 0 0px;
+	font-size:14px;
+	line-height: 14px;
+}
+
+.detail-box .video{
+	width:90%;
+	height:400px;
+	background-color:#000;
+	margin:40px auto;
+}
+
+.detail-box .related-msg p{
+	margin:12px 0px;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+@media (max-width: 500px) {
+	.detail-box .video{
+		height:200px;
+	}
+}
+
+
+.login-box{
+	margin-top:30%;
+	padding:20px;
+}
+
+@media (max-width: 800px) {
+	.login-box{
+		margin-top:10%;
+	}
+}
+
+
+.video-box{
+
+}	
+
+.video-box h3{
+	padding-bottom: 20px;
+	border-bottom:1px solid #EEE;
+	margin-bottom:30px;
+}
+
+.video-box .content{
+	padding:30px;
+}
+
+.video-box .content .nav-tabs>li>a{
+	color:#555;
+}
+
+.video-form , .video-list{
+	margin:20px 0px;
+}
+
+.table>tbody>tr>td{
+	vertical-align:middle;
+}
+
+.video-list .table>tbody>tr>td{
+	vertical-align: middle;
+}
+
