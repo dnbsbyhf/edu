@@ -1,1 +1,3 @@
-Deny from all
+RewriteEngine on 
+RewriteCond $1 !^(index\.php|css|js|images|assets|uploads|sitebuild|res|temp|images|robots\.txt) 
+RewriteRule ^(.*)$ /support/index.php/$1 [L] 
