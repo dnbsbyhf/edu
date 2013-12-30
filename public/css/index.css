@@ -50,6 +50,17 @@ a:hover{
 	background-color:#463265;
 }
 
+
+/*上路导航右边*/
+.navbar-inverse .navbar-form.input{
+	margin-right: 0;
+}
+
+.navbar-brand{
+	font-family: Comic Sans MS;
+}
+
+
 /*右边导航*/
 .nav-tabs>li>a{
 	color:#fff;
@@ -71,8 +82,16 @@ a:hover{
 	padding:10px;
 	margin-bottom:30px;
 	border:1px solid #DDD;
+	margin-left:20px;
 	box-shadow: 1px 1px 7px rgba(153, 153, 153, 0.2);
 }
+@media (max-width: 992px) {
+	.main-container{
+		margin-left:0px;
+	}	
+}
+
+
 
 .card-list-box{
 	background:url(img/graph-bg.png) repeat;
@@ -121,7 +140,7 @@ a:hover{
 }
 
 .card li .link .icon{
-	margin: 10px 0px;
+	margin: 15px 0px;
 }
 
 .card li .link .icon img{
@@ -148,8 +167,9 @@ a:hover{
 .card li .content{
 	font-size: 12px;
 	line-height: 12px;
-	text-indent: 2em;
-	margin-bottom:10px;
+	/*text-indent: 2em;*/
+
+	margin:10px 0px;
 }
 
 .card li .public-time{
@@ -172,7 +192,7 @@ a:hover{
 
 @media (max-width: 400px) {
 	.card{
-		padding-left:30px;
+		padding-left:25px;
 	}
 }
 
@@ -198,7 +218,7 @@ a:hover{
 
 /*详情页*/
 .detail-box{
-
+	padding-bottom: 50px;
 }
 .detail-box .title{
 	padding-bottom:28px;
