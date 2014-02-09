@@ -52,7 +52,6 @@ class Login extends CI_Controller {
 				}else{
 					redirect('/','refresh');
 				}
-
 			}
 		}
 		$this->load->view('login',array('error'=>$this->error,'username'=>$this->username,'password'=>$this->password));

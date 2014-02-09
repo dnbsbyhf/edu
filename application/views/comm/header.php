@@ -51,9 +51,19 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="glyphicon-class">
-                                        <span class="glyphicon glyphicon-user"></span>羊羊羊
-                                    </a>
+                                    <? if($uname){
+                                        echo '
+                                            <a href="<?= site_url();?>index.php/list" class="glyphicon-class">
+                                                <span class="glyphicon glyphicon-user">'.$uname.'</span>
+                                            </a>    
+                                        ';
+                                    }else{
+                                        echo '
+                                            <a href="<?= site_url();?>index.php/login" class="glyphicon-class">
+                                                <span class="glyphicon glyphicon-user"></span>登录
+                                            </a>
+                                        ';
+                                    }?>
                                 </li>
                               </ul>
                             </nav>

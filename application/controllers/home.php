@@ -17,10 +17,28 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct()
+	{
+        parent::__construct();
+
+        $this->load->model('model_user');
+	
+	}
+
 	public function index()
 	{
-		authLogin();
-		$this->load->view('home');
+		$userInfo = array();
+
+		$userId = $this->session->userdata("userId");
+
+		if($userId){
+			$userInfo = $this->model_user->getUserInfo($userId);
+		}
+
+		$this->load->view('home',array(
+			'uname'=>$userInfo['uname'] ? $userInfo['uname'] : ""
+		));
 	}
 
 

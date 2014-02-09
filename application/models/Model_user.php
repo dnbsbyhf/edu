@@ -15,7 +15,23 @@
 	    	$query = $this->db->get('user');
 
 	    	return $query->row();
+	    
 	    }
+
+	    function getUserInfo($value,$key = 'id'){
+
+	    	if(!$value)
+	    		return array();
+
+	    	$this->db->where($key,$value);
+	    	
+	    	$query = $this->db->get('user');
+
+	    	return $query->row_array();
+
+	    }
+
+
 	}
 
 ?>

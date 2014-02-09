@@ -20,9 +20,12 @@ class Detail extends CI_Controller {
 
 	public function index()
 	{
+		
 		authLogin();
 		$this->load->view('home');
+	
 	}
+
 }
 
 /* End of file welcome.php */
