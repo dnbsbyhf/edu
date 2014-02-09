@@ -41,7 +41,7 @@
                 </ul>
               </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="main-container">
                 <div class="card-list-box">
                     <ul class="card clearfix">
@@ -118,7 +118,7 @@
             </div>
             
         </div>
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
             <div class="recommend-nav">
                 <ul id="myTab" class="nav nav-tabs">
                     <li class="active"><a href="#new" data-toggle="tab">最新上传</a></li>
@@ -187,7 +187,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <?php $this->load->view("comm/jslib")?>
