@@ -11,8 +11,8 @@
         <link href="<?= site_url();?>public/css/base.css" rel="stylesheet">
         <link href="<?= site_url();?>public/css/index.css" rel="stylesheet">
     </head>
-    <body class="full-bg">
-        <div class="container-fluid">
+    <body>
+        <div>
 
             <div class="row-fluid">
                 <div class="span12">

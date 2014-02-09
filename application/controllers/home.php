@@ -19,14 +19,11 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
+		authLogin();
 		$this->load->view('home');
 	}
 
 
-	public function test()
-	{
-		$this->load->view('home');
-	}
 
 
 }

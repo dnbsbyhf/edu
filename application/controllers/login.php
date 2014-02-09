@@ -37,15 +37,21 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		
-		if(!($this->error = $this->checkVailid())){
+		if(($this->error = $this->checkVailid()) == true){
 			$result = $this->model_user->is_exsit($this->username,$this->password);
-
 			if(count($result) != 1){
 				$this->error = "账号或密码错误";
 			}else{
 				$id = $result->id;
 				$this->session->set_userdata('userId',$id);
+				$redirect = $this->session->userdata('redirect');
+
+				if($redirect){
+					$this->session->unset_userdata("redirect");
+					redirect($redirect,'refresh');
+				}else{
+					redirect('/','refresh');
+				}
 
 			}
 		}
@@ -72,7 +78,7 @@ class Login extends CI_Controller {
 			return "无效密码";
 		}
 
-		return '';
+		return true;
 	}
 
 

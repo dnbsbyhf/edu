@@ -25,7 +25,6 @@
 	</div>
 <?php $this->load->view("comm/jslib")?>
 
-
 <script src="<?=site_url();?>public/js/index/login.js"></script>
 
 </div>
