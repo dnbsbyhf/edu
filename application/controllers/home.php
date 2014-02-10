@@ -23,11 +23,16 @@ class Home extends CI_Controller {
         parent::__construct();
 
         $this->load->model('model_user');
-	
+		$this->load->model('model_video');	
+
 	}
 
 	public function index()
-	{
+	{	
+
+
+		//用户信息
+
 		$userInfo = array();
 
 		$userId = $this->session->userdata("userId");
@@ -35,10 +40,20 @@ class Home extends CI_Controller {
 		if($userId){
 			$userInfo = $this->model_user->getUserInfo($userId);
 		}
+		
+		//拿视频
+		$grade = $this->input->get('g');
+		$chapter = $this->input->get("c");
+		$section = $this->input->get("s");
+		$page = $this->input->get("p")? $this->input->get("p") : 1;
+		
+		$videos = $this->model_video->filterVideo($grade, $chapter, $section, $page);
 
 		$this->load->view('home',array(
-			'uname'=>$userInfo['uname'] ? $userInfo['uname'] : ""
+			'uname'=>count($userInfo)>0 ? $userInfo['uname'] : "",
+			'videos'=>$videos
 		));
+
 	}
 
 

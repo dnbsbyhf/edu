@@ -41,37 +41,43 @@
                 </ul>
               </div>
         </div>
-        <div class="col-md-8">
+
+        <div class="col-md-9">
             <div class="main-container">
-                <div class="card-list-box">
-                    <ul class="card clearfix">
-                        <?foreach ($videos as $key => $value) {?>
-                            <li>
-                                <a href="#" class="link">
-                                    <div class="title"><?=$value['title']?></div>
-                                    <div class="icon">
-                                        <span class="cnt">
-                                            <img class="" src="<?=$value['src'];?>"/>
-                                            <strong><?=$value['palytime'];?></strong>
-                                        </span>
-                                    </div>
-                                </a>
-                                <div class="content"><?=$value['intro'];?></div>
-                                <div class="public-time">上传时间：<?=$value['date'];?></div>
-                            </li>
-                        <? }?>
-                    </ul>
-<div style="height:2000px"></div>
-                    
-                </div>
+                <?foreach ($video as $key => $value) {?>
+                    <div class="detail-box">
+                        <h3 class="title">
+                            <?=$value['title'];?>
+                        </h3>
+                        <div class="type">
+                            <a href="#"><?=$value['grade'];?></a>/
+                            <a href="#"><?=$value['type'];?></a>/
+                            <a href="#">第<?=$value['chapter'];?>章</a>
+                        </div>
+                        <div class="video">
+                            <div class="cnt">
+                            </div>
+                        </div>
+                        <div class="related-msg">             
+                            <p>
+                                上传时间：<?=$value['date'];?>
+                            </p>
+                            <p class="intro">
+                            </p>
+                            <p>
+                                上传用户：<?=$value['uname'];?>
+                            </p>
+                            <p>
+                                简介：<?=$value['intro'];?>
+                            </p>
+                        </div>
+                    </div>
+                <?}?>
             </div>
         </div>
+
     </div>
 </div>
 <?php $this->load->view("comm/jslib")?>
-
-
-<script src="<?=site_url();?>public/js/home.js"></script>
-
 
 <?php $this->load->view('comm/footer'); ?>
