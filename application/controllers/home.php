@@ -24,15 +24,14 @@ class Home extends CI_Controller {
 
         $this->load->model('model_user');
 		$this->load->model('model_video');	
+		$this->load->model('model_nav');
 
 	}
 
 	public function index()
 	{	
 
-
 		//用户信息
-
 		$userInfo = array();
 
 		$userId = $this->session->userdata("userId");
@@ -49,9 +48,20 @@ class Home extends CI_Controller {
 		
 		$videos = $this->model_video->filterVideo($grade, $chapter, $section, $page);
 
+		//拿导航信息
+		$tab_grade = $this->model_nav->getNav("#");
+		$tab_chapter = $grade ? $this->model_nav->getNav($grade) : array();
+		$tab_section = $grade&&$chapter ? $this->model_nav->getNav($grade.'-'.$chapter) : array();
+		
 		$this->load->view('home',array(
 			'uname'=>count($userInfo)>0 ? $userInfo['uname'] : "",
-			'videos'=>$videos
+			'videos'=>$videos,
+			'grade'=>$grade,
+			'chapter'=>$chapter,
+			'section'=>$section,
+			'tab_grade'=>$tab_grade,
+			'tab_chapter'=>$tab_chapter,
+			'tab_section'=>$tab_section
 		));
 
 	}

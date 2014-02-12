@@ -5,38 +5,65 @@
         <div class="col-md-3">
             <div class="bs-sidebar hidden-print affix" role="complementary">
                 <ul class="nav bs-sidenav">
-                    <li>
-                      <a href="#list-group">年级</a>
-                      <ul class="nav">
-                        <li><a href="#list-group-basic">初一</a></li>
-                        <li><a href="#list-group-badges">初二</a></li>
-                        <li><a href="#list-group-linked">初三</a></li>
-                        <li><a href="#list-group-custom-content">高一</a></li>
-                        <li><a href="#list-group-custom-content">高二</a></li>
-                        <li><a href="#list-group-basic">高三</a></li>
-                      </ul>
-                    </li>
                     <li class="active">
-                      <a href="#list-group">年级</a>
-                      <ul class="nav">
-                        <li class="active"><a href="#list-group-basic">初一</a></li>
-                        <li><a href="#list-group-badges">初二</a></li>
-                        <li><a href="#list-group-linked">初三</a></li>
-                        <li><a href="#list-group-custom-content">高一</a></li>
-                        <li><a href="#list-group-custom-content">高二</a></li>
-                        <li><a href="#list-group-basic">高三</a></li>
-                      </ul>
+                        <a href="<?=site_url()?>">种类</a>
+                        <ul class="nav">
+                            <?foreach ($tab_grade as $key => $value) { ?>
+                                <? if($grade == $value['value']){?>
+                                    <li class="active">
+                                        <a href="javacript:void(0)">
+                                            <? echo $value['value'] == "a"? "扩展课程" :"第".$value['value']."册";?>
+                                        </a>
+                                    </li>
+                                <?}else{?>
+                                <li> <? if($grade == $value['value']){echo 'class="active"';} ?>
+                                    <a href="<? echo site_url()."?g=".$value['value']?>">
+                                        <? echo $value['value'] == "a"? "扩展课程" :"第".$value['value']."册";?>
+                                    </a>
+                                </li>
+                                <?}?>
+                            <?}?>
+                        </ul>
                     </li>
-                    <li>
-                      <a href="#list-group">年级</a>
-                      <ul class="nav">
-                        <li><a href="#list-group-basic">初一</a></li>
-                        <li><a href="#list-group-badges">初二</a></li>
-                        <li><a href="#list-group-linked">初三</a></li>
-                        <li><a href="#list-group-custom-content">高一</a></li>
-                        <li><a href="#list-group-custom-content">高二</a></li>
-                        <li><a href="#list-group-basic">高三</a></li>
-                      </ul>
+                    <li <? if(count($tab_chapter)>0){ echo 'class="active"';}?> > 
+                        <a href="<?=site_url()."?".($grade?"g=".$grade:"")?>">章</a>
+                        <ul class="nav">
+                            <?foreach ($tab_chapter as $key => $value) { ?>
+                                <? if($chapter == $value['value']){?>
+                                    <li class="active">
+                                        <a href="javacript:void(0)">
+                                            <?="第".$value['value']."章";?>
+                                        </a>
+                                    </li>
+                                <?}else{?>
+                                    <li>
+                                        <a href="<? echo site_url()."?".($grade?"g=".$grade."&":"")."c=".$value['value'];?>">
+                                           <?="第".$value['value']."章";?>
+                                        </a>
+                                    </li>
+                                <?}?>
+                            <? }?>
+                        </ul>
+                    </li>
+                    <li <? if(count($tab_section)>0){ echo 'class="active"';}?>>
+                        <a href="<?=site_url()."?".($grade?"g=".$grade."&":"").($chapter?"c=".$chapter:"")?>">节</a>
+                        <ul class="nav">
+                            <?foreach ($tab_section as $key => $value) { ?>
+                                <? if($section == $value['value']){?>
+                                    <li class="active">
+                                        <a href="javacript:void(0)">
+                                            <?="第".$value['value']."节";?>
+                                        </a>
+                                    </li>
+                                <?}else{?>
+                                    <li>
+                                        <a href="<? echo site_url()."?".($grade?"g=".$grade."&":"").($chapter?"c=".$chapter."&":"")."s=".$value['value'];?>">
+                                           <?="第".$value['value']."节";?>
+                                        </a>
+                                    </li>
+                                <?}?>
+                            <? }?>
+                        </ul>
                     </li>
                 </ul>
               </div>
