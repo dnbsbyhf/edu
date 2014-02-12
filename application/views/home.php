@@ -6,7 +6,7 @@
             <div class="bs-sidebar hidden-print affix" role="complementary">
                 <ul class="nav bs-sidenav">
                     <li class="active">
-                        <a href="<?=site_url()?>">种类</a>
+                        <a href="<?=site_url()?>">教材</a>
                         <ul class="nav">
                             <?foreach ($tab_grade as $key => $value) { ?>
                                 <? if($grade == $value['value']){?>

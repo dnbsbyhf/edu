@@ -281,3 +281,8 @@ a:hover{
 	vertical-align: middle;
 }
 
+
+.bs-sidebar .nav > .active > a, .bs-sidebar .nav > .active:hover > a, .bs-sidebar .nav > .active:focus > a{
+	border-right:none;
+}
+
