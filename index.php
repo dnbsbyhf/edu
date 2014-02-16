@@ -1,4 +1,12 @@
 <?php
+function dbg($str = '',$pass = false){
+	echo "<pre>";
+	print_r($str);
+
+	if($pass)
+		exit(0);
+}
+
 
 /*
  *---------------------------------------------------------------

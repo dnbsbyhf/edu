@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Chemistry</title>
+        <title>Organism</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -11,8 +11,8 @@
         <link href="<?= site_url();?>public/css/base.css" rel="stylesheet">
         <link href="<?= site_url();?>public/css/index.css" rel="stylesheet">
     </head>
-    <body class="full-bg">
-        <div class="container-fluid">
+    <body>
+        <div>
 
             <div class="row-fluid">
                 <div class="span12">
@@ -25,7 +25,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                               </button>
-                              <a href="../" class="navbar-brand">chemistry</a>
+                              <a href="../" class="navbar-brand">Organism</a>
                             </div>
                             <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                               <ul class="nav navbar-nav">
@@ -51,9 +51,19 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="glyphicon-class">
-                                        <span class="glyphicon glyphicon-user"></span>羊羊羊
-                                    </a>
+                                    <? if($uname){
+                                        echo '
+                                            <a href="'.site_url().'index.php/list" class="glyphicon-class">
+                                                <span class="glyphicon glyphicon-user">'.$uname.'</span>
+                                            </a>    
+                                        ';
+                                    }else{
+                                        echo '
+                                            <a href="'.site_url().'index.php/login" class="glyphicon-class">
+                                                <span class="glyphicon glyphicon-user"></span>登录
+                                            </a>
+                                        ';
+                                    }?>
                                 </li>
                               </ul>
                             </nav>

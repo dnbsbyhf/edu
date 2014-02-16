@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Detail extends CI_Controller {
+class Ajax extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,7 +18,6 @@ class Detail extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-
 	public function __construct()
 	{
         parent::__construct();
@@ -29,36 +28,42 @@ class Detail extends CI_Controller {
 	}
 
 
-	public function index()
-	{
-		
-		//用户信息
-
-		$userInfo = array();
-
-		$userId = $this->session->userdata("userId");
-
-		if($userId){
-			$userInfo = $this->model_user->getUserInfo($userId);
-		}
-
-
-
-		//视频信息
-		$vid = (int)$this->input->get("vid");
-
-		if(!$vid){
-			redirect('/','refresh');
-		}
-
-		$video = $this->model_video->getVideoById($vid);
-
-		$this->load->view('detail',array(
-			'uname'=>count($userInfo)>0 ? $userInfo['uname'] : "",
-			'video'=>$video
-		));
-	
+	public function _success(){
+		echo '{"code":"200"}';
+		exit(0);
 	}
+
+	public function _error(){
+		echo '{"code":"500"}';
+		exit(0);
+	}
+
+
+	public function deleteVideoBy()
+	{	
+		$vid = $this->input->post("vid");
+
+		$uid = $this->session->userdata('userId');
+		
+		if($vid && $uid){
+			$video = $this->model_video->getVideoByFree(array(
+				"id ="=>$vid,
+				"uid ="=>$uid
+			));
+			if(count($video) == 1){
+				$this->model_video->deleteVideoById($vid);
+				$this->_success();
+			}else{
+				$this->error();
+			}
+
+		}else{
+			$this->_error();
+		}
+	}
+
+
+
 
 }
 

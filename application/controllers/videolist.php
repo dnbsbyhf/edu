@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Detail extends CI_Controller {
+class VideoList extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,41 +23,36 @@ class Detail extends CI_Controller {
 	{
         parent::__construct();
 
-        $this->load->model('model_user');
 		$this->load->model('model_video');	
 
 	}
 
-
 	public function index()
 	{
+		//判断登录
+		authLogin();
+
+		$page = (int)$this->input->get("page");
+
+		$page = $page ? $page : 1;
+
+		//拿用户Id
+		$uid = $this->session->userdata('userId');
 		
-		//用户信息
+		//拿视频
+		$videos = $this->model_video->getVideoByUid($uid,$page);
+		
+		$count = count($videos);
 
-		$userInfo = array();
+		$page_total =  ceil($count/2);
 
-		$userId = $this->session->userdata("userId");
-
-		if($userId){
-			$userInfo = $this->model_user->getUserInfo($userId);
-		}
-
-
-
-		//视频信息
-		$vid = (int)$this->input->get("vid");
-
-		if(!$vid){
-			redirect('/','refresh');
-		}
-
-		$video = $this->model_video->getVideoById($vid);
-
-		$this->load->view('detail',array(
-			'uname'=>count($userInfo)>0 ? $userInfo['uname'] : "",
-			'video'=>$video
+		$this->load->view('list',array(
+			//分页显示			
+			'videos'=>array_slice($videos,($page-1)*2,2),
+			'page'=>$page,
+			'count'=>$count,
+			'page_total'=>$page_total
 		));
-	
 	}
 
 }
