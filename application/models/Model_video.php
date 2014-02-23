@@ -2,7 +2,7 @@
 	class Model_video extends CI_Model {
 
 		//每页展示个数
-		public $pageNumber = 1;
+		public $pageNumber = 30;
 		//列表页展示个数
 		public $listNumber = 2;
 

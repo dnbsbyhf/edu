@@ -26,8 +26,8 @@
                     </div>
                     <div class="main-container content">
                         <ul class="nav nav-tabs">
-                          <li  class="active"><a href="javascript:void(0);">上传视频</a></li>
-                          <li><a href="<?=base_url()."index.php/update"?>">管理视频</a></li>
+                          <li ><a href="<?=base_url()."index.php/videoadd"?>">上传视频</a></li>
+                          <li class="active"><a href="javascript:void(0);">管理视频</a></li>
                         </ul>
 
                         <table class="table video-list table-hover">

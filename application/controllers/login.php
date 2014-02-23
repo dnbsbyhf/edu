@@ -37,6 +37,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+		authlogin();		
 		if(($this->error = $this->checkVailid()) == true){
 			$result = $this->model_user->is_exsit($this->username,$this->password);
 			if(count($result) != 1){
@@ -56,6 +57,14 @@ class Login extends CI_Controller {
 		}
 		$this->load->view('login',array('error'=>$this->error,'username'=>$this->username,'password'=>$this->password));
 		
+	}
+
+	public function logout(){
+
+		$this->session->unset_userdata('userId');
+		
+		redirect('/index.php/login','refresh');
+	
 	}
 
 

@@ -25,21 +25,21 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                               </button>
-                              <a href="../" class="navbar-brand">Organism</a>
+                              <a href="<?=site_url();?>" class="navbar-brand">Organism</a>
                             </div>
                             <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                               <ul class="nav navbar-nav">
-                                <li>
-                                  <a href="../css">首页</a>
-                                </li>
                                 <li class="active">
-                                  <a href="../components">占位符</a>
+                                  <a href="<?=site_url();?>">首页</a>
                                 </li>
                                 <li>
-                                  <a href="../javascript">占位符</a>
+                                  <a href="#">占位符</a>
                                 </li>
                                 <li>
-                                  <a href="../customize">占位符</a>
+                                  <a href="#">占位符</a>
+                                </li>
+                                <li>
+                                  <a href="#">占位符</a>
                                 </li>
                               </ul>
                               <ul class="nav navbar-nav navbar-right">
@@ -50,21 +50,28 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                
                                     <? if($uname){
-                                        echo '
-                                            <a href="'.site_url().'index.php/list" class="glyphicon-class">
+                                        echo '<li>
+                                            <a href="'.site_url().'index.php/videolist" class="glyphicon-class">
                                                 <span class="glyphicon glyphicon-user">'.$uname.'</span>
-                                            </a>    
+                                            </a>
+                                            </li>
+                                            <li>
+                                                 <a href="'.site_url().'index.php/login/logout" ">退出</a>
+                                            </li>
                                         ';
                                     }else{
                                         echo '
+                                            <li>
                                             <a href="'.site_url().'index.php/login" class="glyphicon-class">
                                                 <span class="glyphicon glyphicon-user"></span>登录
                                             </a>
+                                            </li>
                                         ';
                                     }?>
                                 </li>
+
                               </ul>
                             </nav>
                         </div>          
