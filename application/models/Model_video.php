@@ -95,6 +95,11 @@
 	    	$this->db->delete('video');
 
 	    }
+
+	    // 添加视频
+	    function add($data){
+	    	$this->db->insert('video', $data); 
+	    }
 	}
 
 ?>
