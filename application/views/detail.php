@@ -5,38 +5,17 @@
         <div class="col-md-3">
             <div class="bs-sidebar hidden-print affix" role="complementary">
                 <ul class="nav bs-sidenav">
-                    <li>
-                      <a href="#list-group">年级</a>
-                      <ul class="nav">
-                        <li><a href="#list-group-basic">初一</a></li>
-                        <li><a href="#list-group-badges">初二</a></li>
-                        <li><a href="#list-group-linked">初三</a></li>
-                        <li><a href="#list-group-custom-content">高一</a></li>
-                        <li><a href="#list-group-custom-content">高二</a></li>
-                        <li><a href="#list-group-basic">高三</a></li>
-                      </ul>
-                    </li>
                     <li class="active">
-                      <a href="#list-group">年级</a>
-                      <ul class="nav">
-                        <li class="active"><a href="#list-group-basic">初一</a></li>
-                        <li><a href="#list-group-badges">初二</a></li>
-                        <li><a href="#list-group-linked">初三</a></li>
-                        <li><a href="#list-group-custom-content">高一</a></li>
-                        <li><a href="#list-group-custom-content">高二</a></li>
-                        <li><a href="#list-group-basic">高三</a></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="#list-group">年级</a>
-                      <ul class="nav">
-                        <li><a href="#list-group-basic">初一</a></li>
-                        <li><a href="#list-group-badges">初二</a></li>
-                        <li><a href="#list-group-linked">初三</a></li>
-                        <li><a href="#list-group-custom-content">高一</a></li>
-                        <li><a href="#list-group-custom-content">高二</a></li>
-                        <li><a href="#list-group-basic">高三</a></li>
-                      </ul>
+                        <a href="<?=site_url()?>">教材</a>
+                        <ul class="nav">
+                            <?foreach ($tab_grade as $key => $value) { ?>
+                                <li> 
+                                    <a href="<? echo site_url()."?g=".$value['value']?>">
+                                        <? echo $value['value'] == "a"? "扩展课程" :"第".$value['value']."册";?>
+                                    </a>
+                                </li>
+                            <?}?>
+                        </ul>
                     </li>
                 </ul>
               </div>
@@ -44,15 +23,14 @@
 
         <div class="col-md-9">
             <div class="main-container">
+                <?if(count($video)==0) {echo '没有该相关视频,<a href="'.site_url().'">返回首页</a>';}?>
                 <?foreach ($video as $key => $value) {?>
                     <div class="detail-box">
                         <h3 class="title">
                             <?=$value['title'];?>
                         </h3>
                         <div class="type">
-                            <a href="#"><?=$value['grade'];?></a>/
-                            <a href="#"><?=$value['type'];?></a>/
-                            <a href="#">第<?=$value['chapter'];?>章</a>
+                            <span><? echo $value['grade'] == "a"? "扩展课程" :"第".$value['value']."册";?></span><span>/第<?=$value['chapter'];?>章</span><span >/第<?=$value['section'];?>节</span>
                         </div>
                         <div class="video">
                             <div class="cnt">

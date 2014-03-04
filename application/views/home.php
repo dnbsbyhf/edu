@@ -74,7 +74,7 @@
                     <ul class="card clearfix">
                         <?foreach ($videos as $key => $value) {?>
                             <li>
-                                <a href="#" class="link">
+                                <a href="<? echo site_url()."index.php/detail?vid=".$value['id']?>" class="link">
                                     <div class="title"><?=$value['title']?></div>
                                     <div class="icon">
                                         <span class="cnt">

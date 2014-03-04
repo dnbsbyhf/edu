@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Detail extends CI_Controller {
+class VideoAdd extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,45 +23,18 @@ class Detail extends CI_Controller {
 	{
         parent::__construct();
 
-        $this->load->model('model_user');
 		$this->load->model('model_video');	
-		$this->load->model('model_nav');
-	}
 
+	}
 
 	public function index()
 	{
-		
-		//用户信息
+		//判断登录
+		authLogin();
 
-		$userInfo = array();
+		$this->load->view('add',array(
 
-		$userId = $this->session->userdata("userId");
-
-		if($userId){
-			$userInfo = $this->model_user->getUserInfo($userId);
-		}
-
-		// 拿到导航
-		$tab_grade = $this->model_nav->getNav("#");
-
-
-
-		//视频信息
-		$vid = (int)$this->input->get("vid");
-
-		if(!$vid){
-			redirect('/','refresh');
-		}
-
-		$video = $this->model_video->getVideoById($vid);
-
-		$this->load->view('detail',array(
-			'uname'=>count($userInfo)>0 ? $userInfo['uname'] : "",
-			'video'=>$video,
-			'tab_grade'=>$tab_grade
 		));
-	
 	}
 
 }
