@@ -30,11 +30,13 @@
                             <?=$value['title'];?>
                         </h3>
                         <div class="type">
-                            <span><? echo $value['grade'] == "a"? "扩展课程" :"第".$value['value']."册";?></span><span>/第<?=$value['chapter'];?>章</span><span >/第<?=$value['section'];?>节</span>
+                            <span><? echo $value['grade'] == "a"? "扩展课程" :"第".$value['grade']."册";?></span><span>/第<?=$value['chapter'];?>章</span><span >/第<?=$value['section'];?>节</span>
                         </div>
-                        <div class="video">
-                            <div class="cnt">
-                            </div>
+                        <div class="video Fix">
+                           <video id="movie" width="100%" preload="true" controls>
+                              <source src="<?=$value['src'];?>" type="video/mp4">
+                              <source src="<?=$value['src'];?>" type="video/ogg">
+                            </video> 
                         </div>
                         <div class="related-msg">             
                             <p>
@@ -56,6 +58,10 @@
 
     </div>
 </div>
+
+
 <?php $this->load->view("comm/jslib")?>
+<script type="text/javascript" src="<?=site_url();?>public/flash/flowplayer.min.js" charset="utf-8"></script>
+<script src="<?=site_url();?>public/js/index/detail.js"></script>
 
 <?php $this->load->view('comm/footer'); ?>

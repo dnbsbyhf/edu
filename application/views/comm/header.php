@@ -45,9 +45,9 @@
                               <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <div class="navbar-form navbar-left" role="search">
-                                        <div class="form-group">
+                                       <!--  <div class="form-group">
                                             <input type="text" class="form-control" placeholder="按回车键搜索">
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </li>
                                 
