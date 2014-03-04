@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 02 月 11 日 15:49
+-- 生成日期: 2014 年 03 月 02 日 13:42
 -- 服务器版本: 5.1.44
 -- PHP 版本: 5.3.1
 
@@ -49,7 +49,6 @@ INSERT INTO `tab` (`id`, `key`, `value`) VALUES
 (10, '2', '2'),
 (11, '2', '3'),
 (12, '3', '1'),
-(13, '3', '1'),
 (14, '3', '2'),
 (15, '3', '3'),
 (16, 'a', '1'),
@@ -138,19 +137,19 @@ CREATE TABLE IF NOT EXISTS `video` (
   `title` varchar(20) NOT NULL,
   `intro` varchar(200) NOT NULL,
   `src` varchar(100) NOT NULL,
-  `type` int(2) NOT NULL,
+  `type` int(2) NOT NULL DEFAULT '1',
   `grade` int(2) NOT NULL,
   `premission` int(1) NOT NULL,
-  `views` int(11) NOT NULL,
+  `views` int(11) NOT NULL DEFAULT '0',
   `date` date NOT NULL,
   `uid` int(11) NOT NULL,
-  `palytime` int(10) NOT NULL,
+  `palytime` int(10) NOT NULL DEFAULT '0',
   `text` varchar(200) DEFAULT NULL,
   `chapter` int(2) NOT NULL,
   `section` int(2) NOT NULL,
   `uname` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
 -- 转存表中的数据 `video`
@@ -158,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `video` (
 
 INSERT INTO `video` (`id`, `title`, `intro`, `src`, `type`, `grade`, `premission`, `views`, `date`, `uid`, `palytime`, `text`, `chapter`, `section`, `uname`) VALUES
 (1, '化合作用', '阳光，二氧化碳', 'dsfa', 1, 1, 0, 21, '2014-02-11', 2, 12, NULL, 2, 1, '羊羊羊'),
-(2, '呼吸作用', '氧气', 'dsfa', 1, 1, 0, 21, '2014-02-11', 2, 12, NULL, 3, 2, '羊羊羊'),
-(3, '生石灰', '遇到睡变成碱', '的说法', 2, 1, 1, 12, '2014-02-26', 2, 21, NULL, 3, 1, '羊羊羊'),
 (4, '水', '氢气和氧气', '的说法', 2, 1, 1, 12, '2014-02-26', 2, 21, NULL, 2, 2, '羊羊羊'),
-(5, '二氧化硅', '玻璃', '的说法', 2, 1, 1, 12, '2014-02-26', 2, 21, NULL, 4, 1, '羊羊羊');
+(20, '李晓', 'test', 'http://localhost/ba/edu/uploads/test2.mp4', 1, 1, 0, 0, '2014-03-02', 2, 0, NULL, 1, 1, 'test'),
+(21, 'test', '1111', 'http://localhost/ba/edu/uploads/test3.flv', 1, 1, 0, 0, '2014-03-02', 2, 0, NULL, 1, 1, 'test'),
+(19, '完整演示', '哈哈', 'http://localhost/ba/edu/uploads/test1.mp4', 1, 1, 0, 0, '2014-03-02', 2, 0, NULL, 4, 1, 'test');

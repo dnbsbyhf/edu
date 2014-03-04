@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">简介</label>
-                                    <textarea id="intro" name="intro" class="form-control" placeholder="最多300个字" rows="4"></textarea>
+                                    <textarea id="intro" name="intro" class="form-control" placeholder="最多500个字" rows="4"></textarea>
                                 </div>
                                     
                                 <div class="form-group">
