@@ -41,7 +41,7 @@ class Ajax extends CI_Controller {
 
 	public function deleteVideoBy()
 	{	
-		$vid = $this->input->post("vid");
+		$vid = $this->input->get("vid");
 
 		$uid = $this->session->userdata('userId');
 		

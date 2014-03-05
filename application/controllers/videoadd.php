@@ -46,7 +46,7 @@ class VideoAdd extends CI_Controller {
 	public function update(){
 		$config['upload_path'] = getcwd().'/uploads/';
 	  	$config['allowed_types'] = '*';
-		$config['max_size'] = '80000';
+		$config['max_size'] = '80000000';
 	  	$this->load->library('upload', $config);
 		$uid = $this->session->userdata('userId');
 
@@ -57,6 +57,7 @@ class VideoAdd extends CI_Controller {
 
 	  	if ( ! $this->upload->do_upload()){
 		 	$error = array('error' => $this->upload->display_errors());
+		 	dbg($error);
 		 	dbg("上传视频失败<a href=".base_url()."index.php/videoadd>重新上传</a>");
 		} 
 		else{

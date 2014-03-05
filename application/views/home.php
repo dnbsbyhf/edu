@@ -78,8 +78,8 @@
                                     <div class="title"><?=$value['title']?></div>
                                     <div class="icon">
                                         <span class="cnt">
-                                            <img class="" src="<?=$value['src'];?>"/>
-                                            <strong><?=$value['palytime'];?></strong>
+                                            <img class="" src="<?=site_url()."public/img/background.jpg";?>"/>
+                                            <!-- <strong><?=$value['palytime'];?></strong> -->
                                         </span>
                                     </div>
                                 </a>

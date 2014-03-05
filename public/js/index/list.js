@@ -5,7 +5,7 @@ $(function(){
 		if(confirm("确定删除？")){
 			$.ajax({
 				url:"/weike/index.php/ajax/deleteVideoBy",
-				method:"POST",
+				method:"GET",
 				dataType:"json",
 				data:{
 					vid:id
