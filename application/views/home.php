@@ -12,13 +12,13 @@
                                 <? if($grade == $value['value']){?>
                                     <li class="active">
                                         <a href="javacript:void(0)">
-                                            <? echo $value['value'] == "a"? "扩展课程" :"第".$value['value']."册";?>
+                                            <?=$value['title'];?>
                                         </a>
                                     </li>
                                 <?}else{?>
                                 <li> <? if($grade == $value['value']){echo 'class="active"';} ?>
                                     <a href="<? echo site_url()."?g=".$value['value']?>">
-                                        <? echo $value['value'] == "a"? "扩展课程" :"第".$value['value']."册";?>
+                                        <?=$value['title'];?>
                                     </a>
                                 </li>
                                 <?}?>
@@ -32,13 +32,13 @@
                                 <? if($chapter == $value['value']){?>
                                     <li class="active">
                                         <a href="javacript:void(0)">
-                                            <?="第".$value['value']."章";?>
+                                            <?=$value['title'];?>
                                         </a>
                                     </li>
                                 <?}else{?>
                                     <li>
                                         <a href="<? echo site_url()."?".($grade?"g=".$grade."&":"")."c=".$value['value'];?>">
-                                           <?="第".$value['value']."章";?>
+                                          <?=$value['title'];?>
                                         </a>
                                     </li>
                                 <?}?>
@@ -52,13 +52,13 @@
                                 <? if($section == $value['value']){?>
                                     <li class="active">
                                         <a href="javacript:void(0)">
-                                            <?="第".$value['value']."节";?>
+                                           <?=$value['title'];?>
                                         </a>
                                     </li>
                                 <?}else{?>
                                     <li>
                                         <a href="<? echo site_url()."?".($grade?"g=".$grade."&":"").($chapter?"c=".$chapter."&":"")."s=".$value['value'];?>">
-                                           <?="第".$value['value']."节";?>
+                                           <?=$value['title'];?>
                                         </a>
                                     </li>
                                 <?}?>
@@ -69,7 +69,30 @@
               </div>
         </div>
         <div class="col-md-8">
+          
+            
             <div class="main-container">
+               <?if($grade){?>
+                <ol class="breadcrumb">
+                     <?foreach ($tab_grade as $key => $value) { ?>
+                        <? if($grade == $value['value']){?>
+                            <li><a href="#"> <?=$value['title'];?></a></li>
+                        <?}?>
+                    <?}?>
+
+                    <?foreach ($tab_chapter as $key => $value) { ?>
+                        <? if($chapter == $value['value']){?>
+                            <li><a href="#"> <?=$value['title'];?></a></li>
+                        <?}?>
+                    <?}?>
+
+                    <?foreach ($tab_section as $key => $value) { ?>
+                        <? if($section == $value['value']){?>
+                            <li><a href="#"> <?=$value['title'];?></a></li>
+                        <?}?>
+                    <?}?>
+                </ol>
+                <?}?>
                 <div class="card-list-box">
                     <ul class="card clearfix">
                         <?foreach ($videos as $key => $value) {?>

@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Organism</title>
+        <title>Biology</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -25,7 +25,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                               </button>
-                              <a href="<?=site_url();?>" class="navbar-brand">Organism</a>
+                              <a href="<?=site_url();?>" class="navbar-brand">Biology</a>
                             </div>
                             <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                               <ul class="nav navbar-nav">
