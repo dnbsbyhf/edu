@@ -4,7 +4,7 @@ $(function(){
 		var id = _elem.attr("data");
 		if(confirm("确定删除？")){
 			$.ajax({
-				url:"/weike/index.php/ajax/deleteVideoBy",
+				url:"/edu/index.php/ajax/deleteVideoBy",
 				method:"GET",
 				dataType:"json",
 				data:{

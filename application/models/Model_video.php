@@ -77,7 +77,7 @@
 	    //自定义筛选
 	    function getVideoByFree($where){
 	    	foreach ($where as $key => $value) {
-	    		$this->db->where($key,$value[$key]);
+	    		$this->db->where($key,$value);
 	    	}
 	    	
 	    	$query = $this->db->get("video");

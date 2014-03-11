@@ -27,7 +27,6 @@ class Ajax extends CI_Controller {
 
 	}
 
-
 	public function _success(){
 		echo '{"code":"200"}';
 		exit(0);
@@ -50,11 +49,12 @@ class Ajax extends CI_Controller {
 				"id ="=>$vid,
 				"uid ="=>$uid
 			));
+
 			if(count($video) == 1){
 				$this->model_video->deleteVideoById($vid);
 				$this->_success();
 			}else{
-				$this->error();
+				$this->_error();
 			}
 
 		}else{
